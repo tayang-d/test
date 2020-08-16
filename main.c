@@ -1,15 +1,20 @@
 #include <stdio.h>
 #include <unistd.h>
 
+int		put_c(int n)
+{
+	char	c;
+
+	if (n == 0)
+		return 0;
+	c = (n % 10) + '0';
+	put_c(n / 10);
+	write(1, &c, 1);
+	return (0);
+}
+
 int		main()
 {
-	int		i;
-	char	a[2];
-	a[0] = 'a';
-	a[1] = 'b';
-	i = 0;
-	if (i == 2 && a[i++])
-		a[i] = 'c';
-	printf("i : %d, a[0] = %c, a[1] = %c", i, a[0], a[1]);
+	put_c(12345);
 	return (0);
 }
