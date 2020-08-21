@@ -5,6 +5,7 @@ int		main()
 {
 	char	*c;
 	c = "abcde";
-	printf("%-08s", c);
+	printf("short : %*s\n", 3, c);
+	printf("long : %*s\n", 10, c);
 	return (0);
 }
